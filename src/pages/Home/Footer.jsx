@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react';
 import './footer.css';
 
 export function Footer() {
-  // Time Function
-  const [time, setTime] = useState(new Date());
-  useEffect(() => {
-    setInterval(() => setTime(new Date(), 1000));
-  }, []);
+  // // Time Function
+  // const [time, setTime] = useState(new Date());
+  // useEffect(() => {
+  //   setInterval(() => setTime(new Date(), 1000));
+  // }, []);
 
   return (
     <>
@@ -31,7 +31,7 @@ export function Footer() {
               </p>
             </div>
             <div className="fechaHome">
-              <p id="fechaDeHoy">{time.toLocaleTimeString('es', 'GM')}</p>
+              {/* <p id="fechaDeHoy">{time.toLocaleTimeString('es', 'GM')}</p> */}
             </div>
           </div>
         </div>

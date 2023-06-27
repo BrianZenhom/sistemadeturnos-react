@@ -1,3 +1,134 @@
 .ver-turnos {
   height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.bgVerTurno {
+  background-color: #f5f5f5;
+}
+
+.firstVerTurno {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#btnBuscar {
+  border: none;
+  background: #ffc107;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+}
+#btnBuscar:hover {
+  transform: scale(0.9);
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+.secondVerTurno {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.table {
+  width: 95%;
+  height: 400px;
+  background-color: #fffb;
+  margin: 0.8rem auto;
+  border-radius: 10px;
+  overflow: auto;
+}
+.table::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.table::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background: #17191e;
+  visibility: hidden;
+}
+.table::-webkit-scrollbar-track {
+  background-color: #ffc107;
+  visibility: hidden;
+}
+.table:hover::-webkit-scrollbar-track {
+  visibility: visible;
+}
+.table:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+table {
+  width: 100%;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background-color: #ffc107;
+}
+td {
+  width: 36px;
+  height: 36px;
+  text-align: center;
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+  padding: 1rem;
+}
+th {
+  color: #17191e;
+}
+tbody tr:nth-child(even) {
+  background-color: #17191e0a;
+}
+.basuraIcon:hover {
+  background-color: #fc2b2b;
+  cursor: pointer;
+}
+.tableRows {
+  height: 30px;
+  overflow: scroll;
+}
+.buscadorVerTurnos {
+  display: flex;
+  justify-content: center;
+}
+.datosVerTurnos {
+  display: flex;
+  justify-content: center;
+  color: gray;
+}
+#buscarTurno {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+#buscarTurno input {
+  width: 500px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+  border: none;
+  background: #f5f5f5;
+  box-shadow: 3px 3px 5px #a4a4a4, -3px -3px 5px #ffffff;
+}
+.verturnosFull {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 1);
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }

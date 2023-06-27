@@ -38,11 +38,11 @@
   border: 1px solid rgba(255, 255, 255, 1);
 }
 .pacienteName h1 {
-  line-height: 60px;
-  font-size: 65px;
+  line-height: 80px;
+  font-size: 95px;
   font-weight: 800;
 }
 .pacienteName h2 {
-  font-size: 52px;
+  font-size: 72px;
   font-weight: 800;
 }
