@@ -4,19 +4,13 @@ import { Footer } from '../Home/Footer';
 
 import './solicitarturno.css';
 import { InputPaciente } from './inputPaciente';
+import { DropdownPayment } from '../../assets/DropdownPayment';
 
 export function SolicitarTurno() {
-  const [isOpen, setIsOpen] = useState(false);
-  const buttonOpenSelect = isOpen ? 'menu menu-open' : 'menu';
-  const caretOpened = isOpen ? 'caret-rotate' : 'caret';
-
-  const openHandler = () => {
-    setIsOpen(!isOpen);
-  };
+  const [selected, setSelected] = useState('');
   return (
     <>
       <Navbar />
-
       <div className="bg-solturno">
         <section className="container solicitarTurno">
           <div className="datosPaciente">
@@ -115,19 +109,10 @@ export function SolicitarTurno() {
                       required
                       id="metpagoForm"
                     /> --> */}
-                      <div className="dropdown" onClick={openHandler}>
-                        <div className="select">
-                          <span className="selected" id="metpagoForm">
-                            Tarjeta debito
-                          </span>
-                          <div className={caretOpened}></div>
-                        </div>
-                        <ul className={buttonOpenSelect}>
-                          <li>Transferencia</li>
-                          <li>Tarjeta credito</li>
-                          <li>Tarjeta debito</li>
-                        </ul>
-                      </div>
+                      <DropdownPayment
+                        selected={selected}
+                        setSelected={setSelected}
+                      />
                     </div>
                   </div>
                 </div>
