@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar } from '../Home/navbar';
 import { Footer } from '../Home/Footer';
 
@@ -6,7 +6,48 @@ import './verturno.css';
 import { TrashIcon } from '../../assets/TrashIcon';
 import { EditIcon } from '../../assets/EditIcon';
 
+// let localItems = ;
+// console.log(ObjetoPacientes);
+
+// let datos = document.getElementById('turnos');
+
+// const turnoss = document.getElementById('turnos');
+
+// if (ObjetoPacientes) {
+//   ObjetoPacientes.forEach(item => {
+//     datos = document.createElement('tr');
+//     [
+//       (datos.innerHTML = `
+//     <td>${item.nombre}</td>
+//     <td>${item.horario}</td>
+//     <td>ver más</td>
+//     <td className="editarIcon">
+//       <EditIcon />
+//     </td>
+//     <td className="basuraIcon">
+//       <TrashIcon />
+//     </td>
+//     `),
+//     ];
+//   });
+// } else {
+//   datos = document.createElement('tr');
+//   const html = (datos.innerHTML = `
+//     <td> No hay turnos agendados </td>
+//     `);
+//   turnoss.insertAdjacentHTML('afterbegin', html);
+// }
+
 export function VerTurno() {
+  let [ObjetoPacientes, setObjetoPacientes] = useState(
+    JSON.parse(localStorage.getItem(`turnos`))
+  );
+  const remove = item => {
+    console.log(item);
+    let filteredArr = ObjetoPacientes.filter(el => el.nombre !== item.nombre);
+    setObjetoPacientes(filteredArr);
+  };
+
   return (
     <>
       <Navbar />
@@ -46,94 +87,30 @@ export function VerTurno() {
                     </tr>
                   </thead>
                   <tbody className="tableRows" id="turnos">
-                    <tr>
-                      <td>Juan Luis Guerra</td>
-                      <td>6:35</td>
-                      <td>ver más</td>
-                      <td className="editarIcon">
-                        <EditIcon />
-                      </td>
-                      <td className="basuraIcon">
-                        <TrashIcon />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Ezequiel Berlanda</td>
-                      <td>12:30</td>
-                      <td>ver más</td>
-                      <td className="editarIcon">
-                        <EditIcon />
-                      </td>
-                      <td className="basuraIcon">
-                        <TrashIcon />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Brian Zenhom</td>
-                      <td>2:30</td>
-                      <td>ver más</td>
-                      <td className="editarIcon">
-                        <EditIcon />
-                      </td>
-                      <td className="basuraIcon">
-                        <TrashIcon />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Mason Zenhom</td>
-                      <td>7:30</td>
-                      <td>ver más</td>
-                      <td className="editarIcon">
-                        <EditIcon />
-                      </td>
-                      <td className="basuraIcon">
-                        <TrashIcon />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Juan Londoño</td>
-                      <td>9:40</td>
-                      <td>ver más</td>
-                      <td className="editarIcon">
-                        <EditIcon />
-                      </td>
-                      <td className="basuraIcon">
-                        <TrashIcon />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Ariel Alvarez</td>
-                      <td>3:30</td>
-                      <td>ver más</td>
-                      <td className="editarIcon">
-                        <EditIcon />
-                      </td>
-                      <td className="basuraIcon">
-                        <TrashIcon />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Lionel Messi</td>
-                      <td>7:50</td>
-                      <td>ver más</td>
-                      <td className="editarIcon">
-                        <EditIcon />
-                      </td>
-                      <td className="basuraIcon">
-                        <TrashIcon />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Lebron James</td>
-                      <td>4:40</td>
-                      <td>ver más</td>
-                      <td className="editarIcon">
-                        <EditIcon />
-                      </td>
-                      <td className="basuraIcon">
-                        <TrashIcon />
-                      </td>
-                    </tr>
+                    {ObjetoPacientes ? (
+                      ObjetoPacientes.map(item => {
+                        return (
+                          <tr key={item.apellido}>
+                            <td>
+                              {item.nombre} {item.apellido}
+                            </td>
+                            <td>{item.horario}</td>
+                            <td>ver más</td>
+                            <td className="editarIcon">
+                              <EditIcon />
+                            </td>
+                            <td
+                              onClick={() => remove(item)}
+                              className="basuraIcon"
+                            >
+                              <TrashIcon />
+                            </td>
+                          </tr>
+                        );
+                      })
+                    ) : (
+                      <td className="noHayNada"> no hay turnos agendados </td>
+                    )}
                   </tbody>
                 </table>
               </div>

@@ -6,6 +6,48 @@ import './solicitarturno.css';
 import { InputPaciente } from './inputPaciente';
 import { DropdownPayment } from '../../assets/DropdownPayment';
 
+// funcion para mostrar los objetos almacenados en el localStorage
+function obtTurnosGuardados() {
+  const turnosGuardados = localStorage.getItem('turnos');
+  if (turnosGuardados) {
+    return JSON.parse(turnosGuardados);
+  } else {
+    return [];
+  }
+}
+
+// Función para guardar los turnos en el localStorage
+function guardarTurnos(turnos) {
+  localStorage.setItem('turnos', JSON.stringify(turnos));
+}
+
+const pushToLocal = function (e) {
+  e.preventDefault();
+
+  // Obtener los valores del formulario
+  const $ = selector => document.querySelector(selector);
+  const nombre = $('#nombreForm').value;
+  const apellido = $('#apellidoForm').value;
+  const documento = $('#documentoForm').value;
+  const horario = $('#horarioForm').value;
+
+  const turno = {
+    nombre: nombre,
+    apellido: apellido,
+    documento: documento,
+    horario: horario,
+  };
+
+  // Obtener los turnos almacenados en el localStorage
+  const turnosGuardados = obtTurnosGuardados();
+
+  // Agregar el nuevo turno a la lista
+  turnosGuardados.push(turno);
+
+  // Guardar los turnos actualizados en el localStorage
+  guardarTurnos(turnosGuardados);
+};
+
 export function SolicitarTurno() {
   const [selected, setSelected] = useState('');
   return (
@@ -91,13 +133,13 @@ export function SolicitarTurno() {
                     name="horario"
                     type="text"
                     id="horarioForm"
-                    text="Profesional:"
+                    text="Hora:"
                   />
                   <InputPaciente
                     name="abonado"
                     type="text"
                     id="abonadoForm"
-                    text="Fecha y horario:"
+                    text="Profesional:"
                   />
 
                   <div className="metpagoPaciente">
@@ -116,24 +158,24 @@ export function SolicitarTurno() {
                     </div>
                   </div>
                 </div>
+                {/* <!-- BUTTONS --> */}
+                <div className="botonesFormulario">
+                  <div className="botonGuardar">
+                    <button onClick={pushToLocal} type="submit">
+                      <span className="button_top" id="btnGuardar">
+                        {' '}
+                        Guardar{' '}
+                      </span>
+                    </button>
+                  </div>
+                  <div className="botonEliminar">
+                    <button type="reset">
+                      <span className="button_top"> Eliminar </span>
+                    </button>
+                  </div>
+                </div>
               </div>
             </form>
-            {/* <!-- BUTTONS --> */}
-            <div className="botonesFormulario">
-              <div className="botonGuardar">
-                <button type="button">
-                  <span className="button_top" id="btnGuardar">
-                    {' '}
-                    Guardar{' '}
-                  </span>
-                </button>
-              </div>
-              <div className="botonEliminar">
-                <button type="reset">
-                  <span className="button_top"> Eliminar </span>
-                </button>
-              </div>
-            </div>
           </div>
         </section>
       </div>

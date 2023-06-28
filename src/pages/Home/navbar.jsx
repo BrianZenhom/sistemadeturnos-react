@@ -22,7 +22,7 @@ export function Navbar() {
             <Link to="/verturno">Ver turno</Link>
           </li>
           <li>
-            <Link to="/pages/profesionales">Profesionales</Link>
+            <Link to="/profesionales">Profesionales</Link>
           </li>
           <li>
             <Link to="">Usuarios</Link>

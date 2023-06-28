@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { HomePage } from './HomePage';
 import { VerTurno } from './pages/Verturno/VerTurno';
 import { SolicitarTurno } from './pages/Solicitarturno/SolicitarTurno';
+import Profesionales from './pages/Profesionales/Profesionales';
 
 export function App() {
   return (
@@ -12,7 +13,7 @@ export function App() {
 
       <Route path="solicitarturno" element={<SolicitarTurno />} />
 
-      <Route path="profesionales" element={<VerTurno />} />
+      <Route path="profesionales" element={<Profesionales />} />
     </Routes>
   );
 }
