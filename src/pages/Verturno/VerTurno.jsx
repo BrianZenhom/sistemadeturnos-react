@@ -47,10 +47,10 @@ export function VerTurno() {
                   </thead>
                   <tbody className="tableRows" id="turnos">
                     <tr>
-                      <td>Albert Fernandez PUTO</td>
+                      <td>Juan Luis Guerra</td>
                       <td>6:35</td>
                       <td>ver más</td>
-                      <td>
+                      <td className="editarIcon">
                         <EditIcon />
                       </td>
                       <td className="basuraIcon">
@@ -61,7 +61,7 @@ export function VerTurno() {
                       <td>Ezequiel Berlanda</td>
                       <td>12:30</td>
                       <td>ver más</td>
-                      <td>
+                      <td className="editarIcon">
                         <EditIcon />
                       </td>
                       <td className="basuraIcon">
@@ -72,7 +72,7 @@ export function VerTurno() {
                       <td>Brian Zenhom</td>
                       <td>2:30</td>
                       <td>ver más</td>
-                      <td>
+                      <td className="editarIcon">
                         <EditIcon />
                       </td>
                       <td className="basuraIcon">
@@ -83,7 +83,7 @@ export function VerTurno() {
                       <td>Mason Zenhom</td>
                       <td>7:30</td>
                       <td>ver más</td>
-                      <td>
+                      <td className="editarIcon">
                         <EditIcon />
                       </td>
                       <td className="basuraIcon">
@@ -94,7 +94,7 @@ export function VerTurno() {
                       <td>Juan Londoño</td>
                       <td>9:40</td>
                       <td>ver más</td>
-                      <td>
+                      <td className="editarIcon">
                         <EditIcon />
                       </td>
                       <td className="basuraIcon">
@@ -105,7 +105,7 @@ export function VerTurno() {
                       <td>Ariel Alvarez</td>
                       <td>3:30</td>
                       <td>ver más</td>
-                      <td>
+                      <td className="editarIcon">
                         <EditIcon />
                       </td>
                       <td className="basuraIcon">
@@ -116,7 +116,7 @@ export function VerTurno() {
                       <td>Lionel Messi</td>
                       <td>7:50</td>
                       <td>ver más</td>
-                      <td>
+                      <td className="editarIcon">
                         <EditIcon />
                       </td>
                       <td className="basuraIcon">
@@ -127,7 +127,7 @@ export function VerTurno() {
                       <td>Lebron James</td>
                       <td>4:40</td>
                       <td>ver más</td>
-                      <td>
+                      <td className="editarIcon">
                         <EditIcon />
                       </td>
                       <td className="basuraIcon">

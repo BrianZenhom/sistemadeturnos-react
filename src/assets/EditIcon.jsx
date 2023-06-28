@@ -3,9 +3,8 @@ import React from 'react';
 export function EditIcon() {
   return (
     <svg
-      height="21"
+      className="editIcon"
       viewBox="0 0 21 21"
-      width="21"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g fill="none" stroke="currentColor" transform="translate(3 3)">

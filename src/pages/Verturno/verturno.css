@@ -89,9 +89,29 @@ th {
 tbody tr:nth-child(even) {
   background-color: #17191e0a;
 }
+.basuraIcon {
+  transition: 0.2s ease-in-out;
+}
 .basuraIcon:hover {
   background-color: #fc2b2b;
+  transform: scale(0.9);
+  transition: 0.2s ease-in-out;
   cursor: pointer;
+}
+.editarIcon {
+  transition: 0.2s ease-in-out;
+}
+.editarIcon:hover {
+  background-color: #ffc107;
+  transform: scale(0.9);
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+.trashIcon {
+  width: 25px;
+}
+.editIcon {
+  width: 25px;
 }
 .tableRows {
   height: 30px;
