@@ -15,6 +15,7 @@ export function Footer() {
   const year = date.getFullYear();
   const hour = date.getHours();
   const min = date.getMinutes();
+
   return (
     <>
       <div className="lineaDivisor"></div>
