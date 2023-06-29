@@ -9,12 +9,24 @@ export function Footer() {
     setInterval(() => setTime(new Date(), 1000));
   }, []);
 
-  const date = new Date();
-  const day = date.getDate();
-  const month = date.getMonth() + 1;
-  const year = date.getFullYear();
-  const hour = date.getHours();
-  const min = date.getMinutes();
+  // const date = new Date();
+  // const day = date.getDate();
+  // const month = date.getMonth() + 1;
+  // const year = date.getFullYear();
+  // const hour = date.getHours();
+  // const min = date.getMinutes();
+
+  const now = new Date();
+
+  const options = {
+    hour: 'numeric',
+    minute: 'numeric',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  };
+
+  const fechaHora = new Intl.DateTimeFormat('es-AR', options).format(now);
 
   return (
     <>
@@ -38,9 +50,7 @@ export function Footer() {
               </p>
             </div>
             <div className="fechaHome">
-              <p id="fechaDeHoy">
-                {day}/{month}/{year}, {hour}:{min}
-              </p>
+              <p id="fechaDeHoy">{fechaHora}</p>
             </div>
           </div>
         </div>
