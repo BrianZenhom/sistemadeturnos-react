@@ -10,7 +10,11 @@ export function Footer() {
   }, []);
 
   const date = new Date();
-
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  const hour = date.getHours();
+  const min = date.getMinutes();
   return (
     <>
       <div className="lineaDivisor"></div>
@@ -34,8 +38,7 @@ export function Footer() {
             </div>
             <div className="fechaHome">
               <p id="fechaDeHoy">
-                {time.toLocaleTimeString('es', 'GM')} - {date.getDate()}/
-                {date.getMonth() + 1}
+                {day}/{month}/{year}, {hour}:{min}
               </p>
             </div>
           </div>
