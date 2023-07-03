@@ -23,7 +23,7 @@ export function Footer() {
     minute: 'numeric',
     day: 'numeric',
     month: 'long',
-    year: 'numeric',
+    weekday: 'long',
   };
 
   const fechaHora = new Intl.DateTimeFormat('es-AR', options).format(now);

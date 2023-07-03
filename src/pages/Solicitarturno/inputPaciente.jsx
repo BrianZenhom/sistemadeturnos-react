@@ -5,7 +5,7 @@ export function InputPaciente({ text, name, type, id }) {
     <div className={`${name}Paciente`}>
       <p>{text}</p>
       <div className="field">
-        <input type={type} name={name} required={true} id={id} />
+        <input type={type} name={name} required id={id} />
       </div>
     </div>
   );

@@ -30,12 +30,20 @@ const pushToLocal = function (e) {
   const apellido = $('#apellidoForm').value;
   const documento = $('#documentoForm').value;
   const horario = $('#horarioForm').value;
+  const email = $('#emailForm').value;
+  const direccion = $('#direccionForm').value;
+  // const numero = Number($('#numeroForm').value);
+  // const nacimiento = $('#nacimientoForm').value;
 
   const turno = {
     nombre: nombre,
     apellido: apellido,
     documento: documento,
     horario: horario,
+    email: email,
+    direccion: direccion,
+    // numero: numero,
+    // nacimiento: nacimiento,
   };
 
   // Obtener los turnos almacenados en el localStorage

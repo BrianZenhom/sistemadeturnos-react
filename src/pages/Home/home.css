@@ -1,5 +1,5 @@
 .Home {
-  font-family: 'Gotham SSM', sans-serif;
+  font-family: 'Gotham', sans-serif;
   color: #f5f5f5;
 }
 .bg {
@@ -40,9 +40,9 @@
 .pacienteName h1 {
   line-height: 80px;
   font-size: 95px;
-  font-weight: 800;
+  font-weight: 700;
 }
 .pacienteName h2 {
   font-size: 72px;
-  font-weight: 800;
+  font-weight: 700;
 }
